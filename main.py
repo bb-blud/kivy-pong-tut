@@ -1,12 +1,19 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import NumericProperty, ReferenceListProperty
+from kivy.properties import NumericProperty, ReferenceListProperty, \
+    ObjectProperty
 from kivy.vector import Vector
 
+
 class PongGame(Widget):
-    pass
+    ball = ObjectProperty(None)
+
+    def update(self, dt):
+        # call ball.move and other stuff
+        self.ball.move()
+
 class PongBall(Widget):
-    
+
     #Velocity of the ball on x and y axis
     velocity_x = NumericProperty(0)
     velocity_y = NumericProperty(0)
