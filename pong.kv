@@ -6,14 +6,14 @@
 		Rectangle:
 			pos: self.pos
 			size: self.size
-		
+
 <PongBall>:
 	size: 50,50
 	canvas:
 		Ellipse:
 			pos: self.pos
 			size: self.size
-			
+
 <PongGame>:
 	ball: pong_ball
 	player1: player_left
@@ -35,7 +35,7 @@
 		center_x: root.width * 3 / 4
 		top: root.top - 50
 		text: "0"
-		
+
 	PongBall:
 		id: pong_ball
 		center: self.parent.center
@@ -44,7 +44,7 @@
 		id: player_left
 		x: root.x
 		center_y: root.center_y
-		
+
 	PongPaddle:
 		id: player_right
 		x: root.width - self.width
