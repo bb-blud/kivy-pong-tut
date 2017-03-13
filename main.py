@@ -9,12 +9,14 @@ from random import randint
 class PongPaddle(Widget):
 
     score = NumericProperty(0)
-    
+
     def bounce_ball(self, ball):
         speedup = 1.1
+        
         if self.collide_widget(ball):
-            dx, dy = ball.velocity
-            ball.velocity = -speedup*dx, speedup*dy
+            speed = Vector(ball.velocity).length()
+            direction = (Vector(ball.center)-Vector(self.center)).normalize()
+            ball.velocity = speedup*speed*direction
     
 class PongBall(Widget):
 
